@@ -388,6 +388,8 @@ code{font-family:var(--mono);font-size:.9em}
 .edition .base{color:var(--blue-deep)}
 .edition > p{grid-column:5 / span 3;color:var(--soft-light)}
 .edition .status-label{grid-column:8 / span 2;color:var(--soft-light)}
+.status-label.available{color:var(--lav-deep)}
+.status-label.available::before{background:currentColor}
 .edition .btn{grid-column:10 / span 3;justify-self:end}
 .dl-note{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px 32px;align-items:center;margin-top:clamp(40px,6vw,88px);padding:24px 0;border-top:1px solid var(--navy);border-bottom:1px solid var(--line-l)}
 .dl-note img{width:96px}
