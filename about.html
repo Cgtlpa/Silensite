@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About: Silen Linux</title>
+<meta name="description" content="About Silen Linux: an independent distribution with a minimal base, OpenRC, an online installer and the cres package manager.">
+<meta name="theme-color" content="#0d1122">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preload" href="assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><img src="assets/mascots/logo.png" alt="" width="32" height="32"><span>Silen<span class="brand-light"> Linux</span></span></a>
+    <nav aria-label="Main">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+        <li><a href="https://github.com/Cgtlpa/SilenLinux" class="ext" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open main menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main" class="light">
+  <div class="page-head on-dark">
+    <div class="ph-grid">
+      <div class="ph-copy">
+        <h1>About<span>Silen</span></h1>
+        <p>An independent Linux distribution focused on a minimal system foundation, practical tooling, and a configurable desktop experience.</p>
+      </div>
+      <div class="ph-art"><div class="moon" aria-hidden="true"><span class="moon-dots dotfield"></span><span class="moon-ring"></span><span class="moon-ring r2"></span></div><img src="assets/mascots/head.png" width="260" height="285" alt="Close-up of the Silen mascot surrounded by violet sparkles"></div>
+    </div>
+  </div>
+  <div class="about-layout">
+    <nav class="toc" aria-label="On this page">
+      <a href="#distribution">The distribution</a><a href="#directions">Three directions</a><a href="#config">Reproducible configurations</a><a href="#cres">cres</a><a href="#desktop">Desktop direction</a><a href="#principles">Principles</a>
+    </nav>
+    <div class="article">
+      <section id="distribution">
+        <div class="sec-side"><h2>The distribution</h2></div>
+        <div class="sec-body">
+          <p>Silen has its own ISO builder, live initramfs, installer and system integration. It is developed from source. The current system looks like this:</p>
+          <ul class="specs">
+            <li><span>Type</span><span>Independent distribution</span></li>
+            <li><span>Init (installed)</span><span>OpenRC</span></li>
+            <li><span>Live environment</span><span>Custom BusyBox initramfs</span></li>
+            <li><span>Kernel</span><span>Linux 6.18</span></li>
+            <li><span>Bootloader</span><span>GRUB2</span></li>
+            <li><span>Installation target</span><span>UEFI, x86_64</span></li>
+            <li><span>Installer</span><span>Online-only, in development</span></li>
+            <li><span>Filesystems</span><span>ext4, Btrfs</span></li>
+          </ul>
+          <p>The installer is online-only, so installing requires an internet connection; the installed system does not have to stay connected. Drivers, firmware, desktop components and applications are optional additions. These details describe the system as it stands today and are not guarantees for every future edition.</p>
+        </div>
+      </section>
+
+      <section id="directions">
+        <div class="sec-side"><h2>The three development directions</h2><img class="art" src="assets/mascots/slash.png" width="529" height="398" alt="" loading="lazy"></div>
+        <div class="sec-body">
+          <p>Silen is developed in three directions. They are directions, not equally mature products, and none is available for download yet.</p>
+          <div class="dirs">
+            <div><h3>Silen Arch</h3><p>Based on Arch Linux.</p></div>
+            <div><h3>Silen Void</h3><p>Based on Void Linux.</p></div>
+            <div><h3>Silen Independent</h3><p>The independent direction, with its own base and system tooling.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="config">
+        <div class="sec-side"><h2>Reproducible system configurations</h2><img class="art" src="assets/mascots/center.png" width="381" height="372" alt="The Silen mascot with wings open, facing forward" loading="lazy"></div>
+        <div class="sec-body">
+          <p>A Lua configuration file describes the desired system setup: packages, the desktop environment or window manager, and other supported system components. The intent is that a similar setup can be reproduced on another Silen installation.</p>
+          <p>This is not a dotfile manager. The goal is the broader system setup, not only appearance and settings. Configuration options will be documented once they exist.</p>
+          <figure class="doc " aria-label="Illustrative Lua configuration sketch">
+  <figcaption class="doc-cap"><span>Lua configuration sketch</span><span>Illustrative</span></figcaption>
+  <pre class="doc-code" tabindex="0"><code><span class="l"><span class="c">-- an idea for your system</span></span><span class="l"><span class="k">return</span> <span class="p">{</span></span><span class="l">  <span class="key">packages</span> <span class="p">= {</span></span><span class="l">    <span class="s">"fastfetch"</span><span class="p">,</span></span><span class="l">    <span class="s">"neovim"</span><span class="p">,</span></span><span class="l">  <span class="p">},</span></span><span class="l">  <span class="key">desktop</span> <span class="p">=</span> <span class="s">"InstantWM"</span><span class="p">,</span></span><span class="l">  <span class="key">services</span> <span class="p">= {</span> <span class="c">...</span> <span class="p">},</span></span><span class="l"><span class="p">}</span></span></code></pre>
+  <div class="doc-foot"><i></i>Concept, not final syntax</div>
+</figure>
+          <p class="status active"><i></i>In development</p>
+        </div>
+      </section>
+
+      <section id="cres">
+        <div class="sec-side"><h2>Package manager: <span class="mono">cres</span></h2><img class="art" src="assets/mascots/laptop.png" width="390" height="292" alt="The Silen mascot typing on a laptop" loading="lazy"></div>
+        <div class="sec-body">
+          <p><code>cres</code> is Silen's package manager. It is being rewritten in Go, and the rewrite is in development.</p>
+          <ul class="specs">
+            <li><code>cres get &lt;package&gt;</code><span>install a package</span></li>
+            <li><code>cres find &lt;package&gt;</code><span>search for a package</span></li>
+            <li><code>cres rm &lt;package&gt;</code><span>remove a package</span></li>
+            <li><code>cres update</code><span>update the system's packages</span></li>
+          </ul>
+          <h3><code>cres link</code> and <code>.cress</code> files</h3>
+          <p><code>cres link</code> is meant to share and reproduce system configurations. The workflow:</p>
+          <ol class="steps">
+            <li><strong>Define</strong><span>Describe your setup in a Lua configuration.</span></li>
+            <li><strong>Export</strong><span>Use <code>cres link</code> to create a file named <code>system.cress</code>.</span></li>
+            <li><strong>Share</strong><span>Another user obtains the file.</span></li>
+            <li><strong>Recreate</strong><span><code>cres link</code> reads it and installs the specified packages, desktop or window manager and other supported components.</span></li>
+          </ol>
+          <p class="note">Exact syntax and supported options are not final. What can be reproduced depends on what <code>cres link</code> implements.</p>
+          <p class="status active"><i></i>In development</p>
+        </div>
+      </section>
+
+      <section id="desktop">
+        <div class="sec-side"><h2>Desktop direction</h2><img class="art" src="assets/mascots/flying.png" width="411" height="451" alt="The Silen mascot in flight" loading="lazy"></div>
+        <div class="sec-body">
+          <p>InstantWM is the default desktop and is intended to be the foundation of Silen's desktop experience. The base system stays minimal, and desktop components remain optional layers on top of it.</p>
+        </div>
+      </section>
+
+      <section id="principles">
+        <div class="sec-side"><h2>Development principles</h2><img class="art" src="assets/mascots/standing.png" width="334" height="318" alt="The Silen mascot standing with wings folded" loading="lazy"></div>
+        <div class="sec-body">
+          <ul class="principles">
+            <li><strong>Simplicity</strong><span>Prefer fewer moving parts to clever ones.</span></li>
+            <li><strong>Reproducibility</strong><span>Make a system describable and repeatable.</span></li>
+            <li><strong>Practical system tooling</strong><span>Build the tools the system actually needs.</span></li>
+            <li><strong>User control</strong><span>Leave decisions about the system to the person using it.</span></li>
+            <li><strong>Independent development</strong><span>Own the installer, builder and tooling instead of inheriting them.</span></li>
+          </ul>
+          <div class="actions"><a class="btn btn-solid" href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener noreferrer">View Silen on GitHub</a></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="foot">
+    <div class="foot-id"><a class="brand" href="index.html"><img src="assets/mascots/logo.png" alt="" width="32" height="32"><span>Silen<span class="brand-light"> Linux</span></span></a><p>An independent Linux distribution project with its own installer, ISO builder, and system tooling.</p></div>
+    <ul class="foot-nav" aria-label="Footer"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="downloads.html">Downloads</a></li><li><a href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul>
+  </div>
+  <div class="copy"><span>&copy; <span id="year">2026</span> Silen Linux</span><span>Independent by design.</span></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

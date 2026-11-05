@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Silen Linux: Make the system yours</title>
+<meta name="description" content="Silen is an independent Linux distribution focused on a minimal foundation, practical system tooling, and reproducible system configurations.">
+<meta name="theme-color" content="#0d1122">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preload" href="assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html"><img src="assets/mascots/logo.png" alt="" width="32" height="32"><span>Silen<span class="brand-light"> Linux</span></span></a>
+    <nav aria-label="Main">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+        <li><a href="https://github.com/Cgtlpa/SilenLinux" class="ext" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open main menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main" class="light">
+  <section class="hero on-dark" aria-labelledby="hero-title">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="hero-tag"><span class="dot"></span>An independent Linux project</p>
+        <h1 id="hero-title"><span class="h-a">Your system.</span><span class="h-b">Your rules.</span><span class="h-c">Silen.</span></h1>
+        <p class="hero-lead">A Linux distribution being built from the ground up around a lean foundation, practical tooling, and the freedom to shape your own environment.</p>
+        <div class="hero-actions"><a class="btn btn-solid" href="about.html">Explore the project</a><a class="link" href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener noreferrer">Read the source</a></div>
+      </div>
+      <div class="hero-art">
+        <div class="moon" aria-hidden="true"><span class="moon-dots dotfield"></span><span class="moon-ring"></span><span class="moon-ring r2"></span></div>
+        <img class="hero-mascot" src="assets/mascots/spread.png" width="547" height="458" alt="Silen's dark blue and violet moth-bat mascot with crescent-shaped wings spread">
+        <p class="hero-caption">The Silen mascot<br>Built independently, evolving openly</p>
+      </div>
+    </div>
+    <dl class="spec-strip">
+      <div><dt>Foundation</dt><dd>Independent</dd></div>
+      <div><dt>Init system</dt><dd>OpenRC</dd></div>
+      <div><dt>Desktop</dt><dd>InstantWM</dd></div>
+      <div><dt>Package manager</dt><dd>cres</dd></div>
+      <div><dt>Configuration</dt><dd>Lua</dd></div>
+      <div><dt>Installation</dt><dd>Online</dd></div>
+    </dl>
+    <p class="hero-note">Silen is actively evolving. Installation images are not available yet.</p>
+  </section>
+
+  <section class="overview" id="system" aria-labelledby="system-title">
+    <div class="ov-head">
+      <h2 id="system-title">Small by design.<em>Flexible by nature.</em></h2>
+      <p>Silen is not a pre-packed desktop with a new coat of paint. Its own build process and system tools are being developed around a simple idea: start with the essentials, then add what you actually need.</p>
+    </div>
+    <div class="parts">
+      <article class="part p-foundation">
+        <div>
+          <span class="part-tag label">Independent Linux foundation</span>
+          <h3>Built as its own system</h3>
+          <p>An independent distribution with its own ISO builder, live initramfs, installer, and system integration.</p>
+          <ul><li>ISO builder</li><li>Live initramfs</li><li>Installer</li><li>System integration</li></ul>
+        </div>
+        <img src="assets/mascots/standing.png" width="334" height="318" alt="Silen mascot standing with wings folded" loading="lazy">
+      </article>
+
+      <article class="part p-openrc on-dark">
+        <div>
+          <span class="part-tag">Init system</span>
+          <p class="big">OpenRC<small>not systemd</small></p>
+        </div>
+        <div>
+          <p>The installed system uses OpenRC. The live environment is separate and boots through a custom BusyBox-based initramfs.</p>
+          <div class="chips"><span>OpenRC</span><span>BusyBox</span><span>Linux</span></div>
+        </div>
+      </article>
+
+      <article class="part p-cres">
+        <div class="cres-copy">
+          <span class="part-tag">Package manager</span>
+          <span class="word" aria-hidden="true">cres</span>
+          <h3>Tools that belong to Silen</h3>
+          <p><code>cres</code> is the package manager, currently being rewritten in Go.</p>
+        </div>
+        <div class="doc cres-doc on-dark">
+          <div class="doc-cap"><span>Command reference</span><span>cres</span></div>
+          <ol class="cmds">
+            <li><span class="cmd"><b>cres get</b> <em>&lt;package&gt;</em></span><span class="what">install a package</span></li>
+            <li><span class="cmd"><b>cres find</b> <em>&lt;package&gt;</em></span><span class="what">search for a package</span></li>
+            <li><span class="cmd"><b>cres rm</b> <em>&lt;package&gt;</em></span><span class="what">remove a package</span></li>
+            <li><span class="cmd"><b>cres update</b></span><span class="what">update the system's packages</span></li>
+          </ol>
+          <div class="doc-foot"><i></i>Command set in development</div>
+        </div>
+      </article>
+
+      <article class="part p-lua">
+        <figure class="doc lua-doc on-dark" aria-label="Illustrative Lua configuration sketch">
+  <figcaption class="doc-cap"><span>Lua configuration sketch</span><span>Lua</span></figcaption>
+  <pre class="doc-code" tabindex="0"><code><span class="l"><span class="c">-- an idea for your system</span></span><span class="l"><span class="k">return</span> <span class="p">{</span></span><span class="l">  <span class="key">packages</span> <span class="p">= {</span></span><span class="l">    <span class="s">"fastfetch"</span><span class="p">,</span></span><span class="l">    <span class="s">"neovim"</span><span class="p">,</span></span><span class="l">  <span class="p">},</span></span><span class="l">  <span class="key">desktop</span> <span class="p">=</span> <span class="s">"InstantWM"</span><span class="p">,</span></span><span class="l">  <span class="key">services</span> <span class="p">= {</span> <span class="c">...</span> <span class="p">},</span></span><span class="l"><span class="p">}</span></span></code></pre>
+  <div class="doc-foot"><i></i>Concept, not final syntax</div>
+</figure>
+        <div class="lua-copy">
+          <span class="part-tag label">Lua system configuration</span>
+          <h3>Describe the setup. Rebuild it elsewhere.</h3>
+          <p>The goal is a Lua-based system configuration that can describe packages, desktop components, and other supported parts of a setup. The vision for <code>cres link</code> is to make system setups shareable and repeatable, not just a collection of dotfiles.</p>
+          <p class="fine">Illustrative Lua sketch only. The configuration format and supported options are still being developed.</p>
+          <div class="actions"><a class="btn btn-line" href="about.html#cres">Explore cres and system configs</a></div>
+        </div>
+      </article>
+
+      <article class="part p-desktop">
+        <div class="dt-copy">
+          <span class="part-tag label">Default desktop</span>
+          <span class="word">Instant<span>WM</span></span>
+          <p>InstantWM is the default desktop. The base system stays minimal, and desktop components remain optional layers on top of it.</p>
+          <a class="link" href="about.html#desktop">Read about the desktop direction</a>
+        </div>
+        <div class="layers" aria-label="Layers of the system, from the minimal base to optional components">
+          <div class="l-opt">Optional components</div>
+          <div class="l-wm">InstantWM</div>
+          <div class="l-base">Minimal base system</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="roadmap" aria-labelledby="direction-title">
+    <div class="rm-head">
+      <h2 id="direction-title">Still in motion.</h2>
+      <p>These are active areas of work and intended directions, not claims about features already shipped in a release.</p>
+    </div>
+    <ol class="road">
+      <li class="road-item"><span class="road-n" aria-hidden="true">01</span><div class="road-main"><h3><code>cres</code> package manager</h3><p class="status active"><i></i>Go rewrite in development</p></div><p class="road-text">A practical command set for finding, installing, removing, and updating packages.<br><a href="about.html#cres">Read about cres</a></p></li>
+      <li class="road-item"><span class="road-n" aria-hidden="true">02</span><div class="road-main"><h3>Reproducible system configs</h3><p class="status active"><i></i>In development</p></div><p class="road-text">A Lua-described setup that can eventually be exported and recreated with <code>cres link</code>.<br><a href="about.html#config">Read about system configurations</a></p></li>
+      <li class="road-item"><span class="road-n" aria-hidden="true">03</span><div class="road-main"><h3>InstantWM desktop</h3><p class="status"><i></i>Intended direction</p></div><p class="road-text">A minimal desktop foundation, with components added as optional layers on the base system.<br><a href="about.html#desktop">Read about the desktop direction</a></p></li>
+      <li class="road-item"><span class="road-n" aria-hidden="true">04</span><div class="road-main"><h3>Installer and everyday tools</h3><p class="status"><i></i>Ongoing work</p></div><p class="road-text">Continue improving installation, system setup, and maintenance without adding unnecessary complexity.<br><a href="about.html#principles">Read about development principles</a></p></li>
+    </ol>
+  </section>
+
+  <section class="closing on-dark">
+    <div class="closing-grid">
+      <div class="closing-copy">
+        <h2>Made in the open.<span>Built one piece at a time.</span></h2>
+        <p>Silen is an evolving independent Linux project. Follow its progress, explore the source, and see how the system is taking shape.</p>
+        <div class="closing-actions"><a class="btn btn-solid" href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener noreferrer">Visit the repository</a><a class="link" href="downloads.html">Explore editions</a></div>
+      </div>
+      <div class="closing-art"><span class="dotfield" aria-hidden="true"></span><img src="assets/mascots/rock.png" width="314" height="433" alt="Silen mascot sitting on a rock" loading="lazy"></div>
+    </div>
+    <p class="closing-stamp" aria-hidden="true">Silen Linux<br>In progress 2026</p>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="foot">
+    <div class="foot-id"><a class="brand" href="index.html"><img src="assets/mascots/logo.png" alt="" width="32" height="32"><span>Silen<span class="brand-light"> Linux</span></span></a><p>An independent Linux distribution project with its own installer, ISO builder, and system tooling.</p></div>
+    <ul class="foot-nav" aria-label="Footer"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="downloads.html">Downloads</a></li><li><a href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener noreferrer">GitHub</a></li></ul>
+  </div>
+  <div class="copy"><span>&copy; <span id="year">2026</span> Silen Linux</span><span>Independent by design.</span></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
