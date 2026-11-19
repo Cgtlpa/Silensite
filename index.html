@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Silen Linux: Make the system yours</title>
-<meta name="description" content="Silen is an independent Linux distribution focused on a minimal foundation, practical system tooling, and reproducible system configurations.">
+<meta name="description" content="Silen Linux is an independent x86_64 distribution with its own ISO builder, live initramfs, installer, and package manager. Built around InstantWM, OpenRC, and the cres package manager.">
 <meta name="theme-color" content="#0d1122">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preload" href="assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -30,9 +30,9 @@
   <section class="hero on-dark" aria-labelledby="hero-title">
     <div class="hero-grid">
       <div class="hero-copy">
-        <p class="hero-tag"><span class="dot"></span>An independent Linux project</p>
+        <p class="hero-tag"><span class="dot"></span>An independent Linux distribution</p>
         <h1 id="hero-title"><span class="h-a">Your system.</span><span class="h-b">Your rules.</span><span class="h-c">Silen.</span></h1>
-        <p class="hero-lead">A Linux distribution being built from the ground up around a lean foundation, practical tooling, and the freedom to shape your own environment.</p>
+        <p class="hero-lead">An independent x86_64 Linux distribution with its own ISO builder, live initramfs, installer, and package manager. Built around InstantWM, OpenRC, and the cres package manager.</p>
         <div class="hero-actions"><a class="btn btn-solid" href="about.html">Explore the project</a><a class="link" href="https://github.com/Cgtlpa/SilenLinux" target="_blank" rel="noopener noreferrer">Read the source</a></div>
       </div>
       <div class="hero-art">
@@ -47,15 +47,15 @@
       <div><dt>Desktop</dt><dd>InstantWM</dd></div>
       <div><dt>Package manager</dt><dd>cres</dd></div>
       <div><dt>Configuration</dt><dd>Lua</dd></div>
-      <div><dt>Installation</dt><dd>Online</dd></div>
+      <div><dt>ISO size</dt><dd>~2–4 GB</dd></div>
     </dl>
-    <p class="hero-note">Silen is actively evolving. Arch and Void images are available; the independent edition is still in development.</p>
+    <p class="hero-note">Silen is actively evolving. The independent edition ISO is approximately 2–4 GB depending on the build configuration.</p>
   </section>
 
   <section class="overview" id="system" aria-labelledby="system-title">
     <div class="ov-head">
-      <h2 id="system-title">Small by design.<em>Flexible by nature.</em></h2>
-      <p>Silen is not a pre-packed desktop with a new coat of paint. Its own build process and system tools are being developed around a simple idea: start with the essentials, then add what you actually need.</p>
+      <h2 id="system-title">Independent by design.<em>Flexible by nature.</em></h2>
+      <p>Silen is an independent distribution with its own build process and system tools. The installed system uses OpenRC (not systemd), iwd for Wi-Fi, and InstantWM as the default Wayland compositor. Desktop components and applications are installed via the cres package manager.</p>
     </div>
     <div class="parts">
       <article class="part p-foundation">
@@ -74,8 +74,8 @@
           <p class="big">OpenRC<small>not systemd</small></p>
         </div>
         <div>
-          <p>The installed system uses OpenRC. The live environment is separate and boots through a custom BusyBox-based initramfs.</p>
-          <div class="chips"><span>OpenRC</span><span>BusyBox</span><span>Linux</span></div>
+          <p>The installed system uses OpenRC with elogind. The live environment boots through a custom BusyBox-based initramfs. TTYs 2–6 run agetty in both live and installed systems.</p>
+          <div class="chips"><span>OpenRC</span><span>elogind</span><span>BusyBox</span><span>Linux 6.18</span></div>
         </div>
       </article>
 
@@ -84,17 +84,17 @@
           <span class="part-tag">Package manager</span>
           <span class="word" aria-hidden="true">cres</span>
           <h3>Tools that belong to Silen</h3>
-          <p><code>cres</code> is the package manager, currently being rewritten in Go.</p>
+          <p><code>cres</code> is Silen's package manager, rewritten in Go. It handles package installation, removal, search, and system updates.</p>
         </div>
         <div class="doc cres-doc on-dark">
           <div class="doc-cap"><span>Command reference</span><span>cres</span></div>
           <ol class="cmds">
-            <li><span class="cmd"><b>cres get</b> <em>&lt;package&gt;</em></span><span class="what">install a package</span></li>
-            <li><span class="cmd"><b>cres find</b> <em>&lt;package&gt;</em></span><span class="what">search for a package</span></li>
-            <li><span class="cmd"><b>cres rm</b> <em>&lt;package&gt;</em></span><span class="what">remove a package</span></li>
+            <li><span class="cmd"><b>cres get</b> <em><package></em></span><span class="what">install a package</span></li>
+            <li><span class="cmd"><b>cres find</b> <em><package></em></span><span class="what">search for a package</span></li>
+            <li><span class="cmd"><b>cres rm</b> <em><package></em></span><span class="what">remove a package</span></li>
             <li><span class="cmd"><b>cres update</b></span><span class="what">update the system's packages</span></li>
           </ol>
-          <div class="doc-foot"><i></i>Command set in development</div>
+          <div class="doc-foot"><i></i>In development</div>
         </div>
       </article>
 
@@ -117,13 +117,13 @@
         <div class="dt-copy">
           <span class="part-tag label">Default desktop</span>
           <span class="word">Instant<span>WM</span></span>
-          <p>InstantWM is the default desktop. The base system stays minimal, and desktop components remain optional layers on top of it.</p>
+          <p>InstantWM is the default Wayland compositor. Rofi (<code>mod4+Space</code>) is the application launcher; Kitty (<code>mod4+Return</code>) is the default terminal. InstantMenu (<code>mod4+E</code>) remains available.</p>
           <a class="link" href="about.html#desktop">Read about the desktop direction</a>
         </div>
-        <div class="layers" aria-label="Layers of the system, from the minimal base to optional components">
+        <div class="layers" aria-label="Layers of the system, from the base to optional components">
           <div class="l-opt">Optional components</div>
           <div class="l-wm">InstantWM</div>
-          <div class="l-base">Minimal base system</div>
+          <div class="l-base">Base system (OpenRC, iwd, cres)</div>
         </div>
       </article>
     </div>
@@ -137,8 +137,8 @@
     <ol class="road">
       <li class="road-item"><span class="road-n" aria-hidden="true">01</span><div class="road-main"><h3><code>cres</code> package manager</h3><p class="status active"><i></i>Go rewrite in development</p></div><p class="road-text">A practical command set for finding, installing, removing, and updating packages.<br><a href="about.html#cres">Read about cres</a></p></li>
       <li class="road-item"><span class="road-n" aria-hidden="true">02</span><div class="road-main"><h3>Reproducible system configs</h3><p class="status active"><i></i>In development</p></div><p class="road-text">A Lua-described setup that can eventually be exported and recreated with <code>cres link</code>.<br><a href="about.html#config">Read about system configurations</a></p></li>
-      <li class="road-item"><span class="road-n" aria-hidden="true">03</span><div class="road-main"><h3>InstantWM desktop</h3><p class="status"><i></i>Intended direction</p></div><p class="road-text">A minimal desktop foundation, with components added as optional layers on the base system.<br><a href="about.html#desktop">Read about the desktop direction</a></p></li>
-      <li class="road-item"><span class="road-n" aria-hidden="true">04</span><div class="road-main"><h3>Installer and everyday tools</h3><p class="status"><i></i>Ongoing work</p></div><p class="road-text">Continue improving installation, system setup, and maintenance without adding unnecessary complexity.<br><a href="about.html#principles">Read about development principles</a></p></li>
+      <li class="road-item"><span class="road-n" aria-hidden="true">03</span><div class="road-main"><h3>InstantWM desktop</h3><p class="status active"><i></i>Default compositor</p></div><p class="road-text">The default Wayland compositor with Rofi launcher and Kitty terminal. Components added as optional layers.<br><a href="about.html#desktop">Read about the desktop direction</a></p></li>
+      <li class="road-item"><span class="road-n" aria-hidden="true">04</span><div class="road-main"><h3>Installer and everyday tools</h3><p class="status active"><i></i>Ongoing work</p></div><p class="road-text">Continue improving installation, system setup, and maintenance without adding unnecessary complexity.<br><a href="about.html#principles">Read about development principles</a></p></li>
     </ol>
   </section>
 
