@@ -118,11 +118,12 @@
           <span class="part-tag label">Default desktop</span>
           <span class="word">Instant<span>WM</span></span>
           <p>InstantWM is the default Wayland compositor. Rofi (<code>mod4+Space</code>) is the application launcher; Kitty (<code>mod4+Return</code>) is the default terminal. InstantMenu (<code>mod4+E</code>) remains available.</p>
+          <p class="fine">Note: SilenWM (a custom Wayland compositor) is coming soon as the default desktop.</p>
           <a class="link" href="about.html#desktop">Read about the desktop direction</a>
         </div>
         <div class="layers" aria-label="Layers of the system, from the base to optional components">
           <div class="l-opt">Optional components</div>
-          <div class="l-wm">InstantWM</div>
+          <div class="l-wm">InstantWM → SilenWM (soon)</div>
           <div class="l-base">Base system (OpenRC, iwd, cres)</div>
         </div>
       </article>
@@ -137,7 +138,7 @@
     <ol class="road">
       <li class="road-item"><span class="road-n" aria-hidden="true">01</span><div class="road-main"><h3><code>cres</code> package manager</h3><p class="status active"><i></i>Go rewrite in development</p></div><p class="road-text">A practical command set for finding, installing, removing, and updating packages.<br><a href="about.html#cres">Read about cres</a></p></li>
       <li class="road-item"><span class="road-n" aria-hidden="true">02</span><div class="road-main"><h3>Reproducible system configs</h3><p class="status active"><i></i>In development</p></div><p class="road-text">A Lua-described setup that can eventually be exported and recreated with <code>cres link</code>.<br><a href="about.html#config">Read about system configurations</a></p></li>
-      <li class="road-item"><span class="road-n" aria-hidden="true">03</span><div class="road-main"><h3>InstantWM desktop</h3><p class="status active"><i></i>Default compositor</p></div><p class="road-text">The default Wayland compositor with Rofi launcher and Kitty terminal. Components added as optional layers.<br><a href="about.html#desktop">Read about the desktop direction</a></p></li>
+      <li class="road-item"><span class="road-n" aria-hidden="true">03</span><div class="road-main"><h3>SilenWM desktop</h3><p class="status active"><i></i>Coming soon</p></div><p class="road-text">A custom Wayland compositor built for Silen, replacing InstantWM as the default desktop.<br><a href="about.html#desktop">Read about the desktop direction</a></p></li>
       <li class="road-item"><span class="road-n" aria-hidden="true">04</span><div class="road-main"><h3>Installer and everyday tools</h3><p class="status active"><i></i>Ongoing work</p></div><p class="road-text">Continue improving installation, system setup, and maintenance without adding unnecessary complexity.<br><a href="about.html#principles">Read about development principles</a></p></li>
     </ol>
   </section>
